@@ -93,7 +93,7 @@ From the [docs](https://github.com/sahat/satellizer):
     </details>
     <!-- $location.path('/login') -->
 
-<!--10:35 15 minutes -->
+  <!--10:35 15 minutes -->
 
 4. Implement the functionality outlined in `Account.signup()` (TODO #8, #9, #10).
 
@@ -126,9 +126,9 @@ From the [docs](https://github.com/sahat/satellizer):
     </details>
     <!-- $location.path('/profile') -->
 
-<!-- If we have time to intro great, otherwise point these out as further exercises -->
-
 5. At this point, you should be able to sign up a user, log them in, and view their profile page from the client.
+
+<!-- If we have time to intro great, otherwise point these out as further exercises -->
 
 ## User Settings
 
