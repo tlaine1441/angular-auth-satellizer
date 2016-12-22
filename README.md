@@ -91,8 +91,8 @@ From the [docs](https://github.com/sahat/satellizer):
           })
     )-->
     <details><summary>TODO #7 Hint:</summary>
-    - Inject $location into this controller also
-    - Pass `'/login'` to the `.path` method we used in #5
+      - Inject $location into this controller also
+      - Pass `'/login'` to the `.path` method we used in #5
     </details>
     <!-- $location.path('/login') -->
 
