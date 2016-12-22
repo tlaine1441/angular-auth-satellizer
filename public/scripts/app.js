@@ -139,7 +139,7 @@ function LoginController ($location, Account) {
     Account
       .login(vm.new_user)
       .then(function(){
-        vm.new_user = {}; // clear sign up form
+        vm.new_user = {}; // clear login form
         $location.path('/profile'); // redirect to '/profile'
       })
   };
