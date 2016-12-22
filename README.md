@@ -54,7 +54,7 @@ From the [docs](https://github.com/sahat/satellizer):
   * Add the Satellizer module to your Angular app in `app.js` (TODO #2).
   * Check that you can navigate between your routes (`/`, `/signup`, `/login`, and `/profile`).
 
-2. Follow the instructions in `app.js` to finish implementing `Account.login()` (TODO #3, #4, #5). You can test this on `/login/` with the email and password you used to create a user in setup.
+2. Follow the instructions in `public/scripts/app.js` to finish implementing `Account.login()` (TODO #3, #4, #5). You can test this on `/login/` with the email and password you used to create a user in setup.
 
 
    <details><summary>TODO #3 Hint</summary>
