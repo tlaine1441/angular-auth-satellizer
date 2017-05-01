@@ -17,6 +17,8 @@ From the [docs](https://github.com/sahat/satellizer):
 
 >Satellizer is a simple to use, end-to-end, token-based authentication module for AngularJS with built-in support for Google, Facebook, LinkedIn, Twitter, Instagram, GitHub, Bitbucket, Yahoo, Twitch, Microsoft (Windows Live) OAuth providers, as well as Email and Password sign-in.
 
+<!--It is vital that groups not move on until everyone has made it through each major chunk.  Explain what we're doing in each chunk, have a dev explain it at a high level, and make sure folks know to help others if they are done, rather than moving on. Share solutions at end of each major chunk, but not before.-->
+
 <!--9:50 20 minutes -->
 
 ## App Setup
@@ -79,13 +81,12 @@ From the [docs](https://github.com/sahat/satellizer):
 
     <details><summary>TODO #6 Hint:</summary>
     - Look at the login method above for a pattern to follow (you only need one anonymous function here, no need for `onSuccess` and `onError`).
-    - Check out [this documentation](https://github.com/sahat/satellizer#user-content-authremovetoken) for a method we can use to remove a token
+    - Check out [this documentation](https://github.com/sahat/satellizer#authlogout) for a method we can use instead of `login`
     </details>
     <!--return (
         $auth
           .logout() // delete token
           .then(function() {
-            $auth.removeToken();
             self.user = null;
           })
     )-->
@@ -94,8 +95,6 @@ From the [docs](https://github.com/sahat/satellizer):
       - Pass `'/login'` to the `.path` method we used in #5
     </details>
     <!-- $location.path('/login') -->
-
-<!--Actually 10:50 just for me to get to here, so letting devs go to 11 -->
 
   <!--10:35 15 minutes -->
 
@@ -132,9 +131,9 @@ From the [docs](https://github.com/sahat/satellizer):
 
 5. At this point, you should be able to sign up a user, log them in, and view their profile page from the client.
 
-<!--This went to 11:23 after going through my solution -->
-
 <!-- If we have time to intro great, otherwise point these out as further exercises -->
+
+<!--10:50 15 minutes -->
 
 ## User Settings
 
@@ -154,6 +153,8 @@ From the [docs](https://github.com/sahat/satellizer):
 
 ## Nested Resources: Posts (TODO #15)
 > No more TODOs! You're on your own from here on out!
+
+<!--11:05 Intro these and then break -->
 
 1. Create a form on the homepage for the user to add a blog-post (that's right - you're turning your Angular app into a microblog). The blog-post form should have input (`title`) and textarea (`content`) fields. Hint: Use `ng-model`.
 
