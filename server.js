@@ -2,7 +2,6 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    hbs = require('hbs'),
     mongoose = require('mongoose'),
     auth = require('./resources/auth');
 
@@ -15,9 +14,6 @@ app.use(bodyParser.json());
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
-
-// set view engine to hbs (handlebars)
-app.set('view engine', 'hbs');
 
 // connect to mongodb
 mongoose.connect('mongodb://localhost/angular_auth');
@@ -182,7 +178,7 @@ app.post('/auth/login', function (req, res) {
  * Catch All Route
  */
 app.get(['/', '/signup', '/login', '/profile'], function (req, res) {
-  res.render('index');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 
