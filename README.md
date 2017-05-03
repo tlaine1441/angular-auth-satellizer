@@ -62,17 +62,21 @@ From the [docs](https://github.com/sahat/satellizer):
 
 
    <details><summary>TODO #3 Hint</summary>
+   
      - `console.log(response)` to find the token we're setting.
    </details>
    <!--$auth.setToken(response.data.token)-->
 
    <details><summary>TODO #4 Hint</summary>
+   
     - How would we set `new_user` to blank? (we do it higher up in Login Controller)
    </details>
    <!-- vm.new_user = {} -->
 
    <details><summary>TODO #5 Hint</summary>
+   
     - Inject $location into your controller
+    
     - Pass the `'/profile'` path to the function in this [$location documentation](https://docs.angularjs.org/api/ng/service/$location#path)
     </details>
     <!-- $location.path('/profile') -->
@@ -80,8 +84,10 @@ From the [docs](https://github.com/sahat/satellizer):
 3. Click the "Log Out" link to logout (TODO #6) and make sure it redirects to `/login` (TODO #7).
 
     <details><summary>TODO #6 Hint:</summary>
-    - Look at the login method above for a pattern to follow (you only need one anonymous function here, no need for `onSuccess` and `onError`).
-    - Check out [this documentation](https://github.com/sahat/satellizer#authlogout) for a method we can use instead of `login`
+      
+      - Look at the login method above for a pattern to follow (you only need one anonymous function here, no need for `onSuccess` and `onError`).
+
+      - Check out [this documentation](https://github.com/sahat/satellizer#authlogout) for a method we can use instead of `login`
     </details>
     <!--return (
         $auth
@@ -91,7 +97,9 @@ From the [docs](https://github.com/sahat/satellizer):
           })
     )-->
     <details><summary>TODO #7 Hint:</summary>
+    
       - Inject $location into this controller also
+      
       - Pass `'/login'` to the `.path` method we used in #5
     </details>
     <!-- $location.path('/login') -->
@@ -101,7 +109,9 @@ From the [docs](https://github.com/sahat/satellizer):
 4. Implement the functionality outlined in `Account.signup()` (TODO #8, #9, #10).
 
     <details><summary>TODO #8 Hint</summary>
+    
      - Use your `login()` function as a pattern
+     
      - Use the documentation referenced to build out the rest.
     </details>
     <!--     return (
@@ -119,12 +129,14 @@ From the [docs](https://github.com/sahat/satellizer):
     ); -->
 
     <details><summary>TODO #9 Hint</summary>
+    
      - Remember what we did in #4?
     </details>
     <!-- inject $location into controller then vm.new_user = {} -->
 
 
     <details><summary>TODO #10 Hint</summary>
+    
      - Remember what we did in #5?
     </details>
     <!-- $location.path('/profile') -->
