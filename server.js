@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
-// connect to mongodb
-mongoose.connect('mongodb://localhost/angular_auth');
+// // connect to mongodb
+// mongoose.connect('mongodb://localhost/angular_auth');
 
 // require User and Post models
 var User = require('./models/user');
@@ -28,11 +28,12 @@ var sqlUser = require('./models/user_sql');
 
 /*
   To use Sequelize instead of Mongoose,
-  just replace "sqlapi" with "api"
+  just replace "api" with "api"
   in these routes
 */
 
-app.get('/sqlapi/me', auth.ensureAuthenticated, function (req, res) {
+app.get('/api/me', auth.ensureAuthenticated, function (req, res) {
+  console.log(req.user);
   sqlUser.findById(req.user).then(function (user) {
     if (!user) {
       return res.status(400).send({ message: 'User not found.' });
@@ -41,7 +42,7 @@ app.get('/sqlapi/me', auth.ensureAuthenticated, function (req, res) {
   });
 });
 
-app.put('/sqlapi/me', auth.ensureAuthenticated, function (req, res) {
+app.put('/api/me', auth.ensureAuthenticated, function (req, res) {
   sqlUser.findById(req.user).then(function (user) {
     if (!user) {
       return res.status(400).send({ message: 'User not found.' });
@@ -61,11 +62,11 @@ app.put('/sqlapi/me', auth.ensureAuthenticated, function (req, res) {
 /* SQL Auth Routes */
 /*
   To use Sequelize instead of Mongoose, 
-  just replace "sqlauth" with "auth"
+  just replace "auth" with "auth"
   in these routes
 */
 
-app.post('/sqlauth/signup', function (req, res) {
+app.post('/auth/signup', function (req, res) {
   sqlUser.findOne({where: { email: req.body.email }}).then(function (existingUser) {
     if (existingUser) {
       return res.status(409).send({ message: 'Email is already taken.' });
@@ -85,7 +86,7 @@ app.post('/sqlauth/signup', function (req, res) {
   });
 });
 
-app.post('/sqlauth/login', function (req, res) {
+app.post('/auth/login', function (req, res) {
   sqlUser.findOne({where: { email: req.body.email }}).then(function (existingUser) {
     if (!existingUser) {
       return res.status(401).send({ message: 'Invalid email or password.' });

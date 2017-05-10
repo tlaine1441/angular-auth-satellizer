@@ -16,8 +16,8 @@ var User = sequelize.define('user', {
   }  
 });
 
-//Only needed for setup
-User.sync({force: true});
+// //Only needed for setup
+// User.sync({force: true});
 
 User.beforeCreate(function(user, options) {
 	//Async didn't work with this hook :(
